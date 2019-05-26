@@ -1,0 +1,168 @@
+[13-May-2019 20:17:25 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('\xD0\xB37', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(27): PayPal\Api\Item->setPrice('\xD0\xB37')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[20-May-2019 12:04:30 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('\xE2\x82\xAA 0.00 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice('\xE2\x82\xAA 0.00 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[20-May-2019 12:45:59 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('\xE2\x82\xAA 0.08', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice('\xE2\x82\xAA 0.08')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[20-May-2019 12:46:55 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate(' 0.00 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice(' 0.00 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[20-May-2019 12:47:09 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate(' 9.00 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice(' 9.00 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[20-May-2019 12:49:07 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate(' 0 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice(' 0 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 12:24:12 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate(' 0.00 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice(' 0.00 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 13:26:35 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate(' 709.00 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice(' 709.00 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 13:28:16 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate(' 709 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice(' 709 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 13:29:11 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate(' 709 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice(' 709 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 13:29:16 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('709 ', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice('709 ')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 13:33:24 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('<br /><b>Warnin...', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice('<br /><b>Warnin...')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 13:35:07 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('(709,', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice('(709,')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[22-May-2019 13:35:26 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('(709,', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(26): PayPal\Api\Item->setPrice('(709,')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:14:31 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:16:47 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:19:32 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:20:46 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:23:34 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:25:35 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:25:37 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:29:06 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:33:18 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:41:59 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:46:52 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[23-May-2019 11:49:53 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,410', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,410')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[24-May-2019 15:20:32 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,044', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,044')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[24-May-2019 15:22:18 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Price is not a valid numeric value' in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Item.php(129): PayPal\Validation\NumericValidator::validate('1,044', 'Price')
+#1 /home/salimma/public_html/Q/paypal/first.php(62): PayPal\Api\Item->setPrice('1,044')
+#2 {main}
+  thrown in /home/salimma/public_html/Q/paypal/vendor/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
