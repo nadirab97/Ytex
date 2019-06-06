@@ -6,7 +6,7 @@ require_once('initialize.php');
 <html lang="en">
 
 <head>
- <title>Home-Ytex</title>
+ <title>Products-Ytex</title>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,7 +17,7 @@ require_once('initialize.php');
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-<header class="header">
+	<header class="header">
         	    <?php 
           session_start(); 
           if (isset($_GET['logout'])) {
@@ -59,7 +59,7 @@ require_once('initialize.php');
                 						<td><?php echo $values["item_name"]; ?></td>
                 						<td><?php echo $values["item_quantity"]; ?></td>
                 						<td>₪ <?php echo $values["item_price"]; ?></td>
-                						<td>₪ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
+                						<td>₪ <?php echo ($values["item_quantity"] * $values["item_price"]);?></td>
                 						<td><a href="categories1.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">הסר מהסל</span></a></td>
                 					</tr>
                 					<?php
@@ -67,9 +67,23 @@ require_once('initialize.php');
                 						}
                 					?>
                 					<tr>
-                						<td colspan="3" align="right">סה"כ</td>
-                						<td align="right">₪ <?php echo number_format($total, 2); ?></td>
+                						<td colspan="3" align="right">הנחה חבר מעדון</td>
+                						<td align="right">% 
+                						<?php if (isset($_SESSION['username'])) : ?>
+                                        <?php echo number_format("10"); ?> <?php else : ?>
+                                        <?php echo number_format("0"); ?> <?php endif ?>
+                                        </td>
                 						<td></td>
+                					</tr>
+                					<tr>
+                						<td colspan="3" align="right">סה"כ</td>
+                						<td align="right">₪ <?php if (isset($_SESSION['username'])) : ?>
+                                        <?php $total=($total-0.1*$total);?> <?php else : ?>
+                                        <?php $total=($total)?> <?php endif ?>
+                						
+                						<?php echo ($total); ?></td>
+                						<td><a href="categories1.php?action=delete2&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">הסר הכל</span></a></td>
+
                 					</tr>
                 					<?php
                 					}
@@ -91,9 +105,10 @@ require_once('initialize.php');
 		<div class="container-fluid w3-container w3-teal">
 		 <nav class="col-sm-12 navbar-light catgory navbar navbar-fixed-top" id="salim1">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -119,11 +134,12 @@ require_once('initialize.php');
                    <button style="family-font:verdana;"id="mycart" data-toggle="modal" data-target="#cartModal" class="shop">הסל שלי</button>
 		 </nav>
 
-		 <nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
+		<nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -200,7 +216,7 @@ require_once('initialize.php');
 
 
      $category_name = $_GET['page'];
-     echo'<h1 class="slogen"> <strong>'.$category_name.'</strong> </h1> <br><br>';
+     echo'<center><h1 class="slogen2"> <strong>'.$category_name.'</strong></h1> </center><br><br>';
 
 
 	$category2=array();
@@ -209,22 +225,21 @@ require_once('initialize.php');
 			for($j=0; $j<sizeof($category2);$j++) {	
 			echo '<div class="col-md-4">'.
 		        '<form method="post" action="categories1.php?action=add&id=  '.$category2[$j]->get_product_name().'">'.
-					'<div style="border:1px solid #800000; background-color:#f5f5dc; border-radius:5px; padding:16px; margin:16px;" align="center">'.
-						'.<img src="'.$category2[$j]-> get_image().'" class="img-circle" width="300" height="230"/>';
-
+					'<div style="border:1px solid #800000; background-color:#f5f5dc; border-radius:5px; padding:16px; margin:16px; height:670px;" align="center">'.
+                        '<img src="'.$category2[$j]-> get_image().'" class="img-circle img-responsive" width="300" height="230"/>';
                     echo	'<h2 style="font-family: verdana; color:black; font-size:25px;">'.$category2[$j]->get_product_name().'</h2>';
 
                 	echo    '<span style="font-family: verdana; font-size:15px;">'.$category2[$j]->get_description();'</span>';
 	
 					echo	'<h4 class="text-danger">מחיר: ₪'.$category2[$j]->get_price().'</h4>';
 
-					echo	'<input type="number" name="quantity" value="1" class="form-control" />';
+					echo	'<input type="number" min="0" name="quantity" value="1" class="form-control" />';
 
 					echo	'<input type="hidden" name="hidden_name" value="'.$category2[$j]->get_product_name().'" />';
 
-					echo	'<input type="hidden" name="hidden_price" value="'.$category2[$j]->get_price().'" />';
+					echo	'<input type="hidden" name="hidden_price" value="'.$category2[$j]->get_price().'" />'.'<br>';
 
-					echo	'<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="הוסף לסל" />'.
+					echo	'<input type="submit" name="add_to_cart" style="margin-top:5px;" class="myButton" value="הוסף לסל" />'.
 
 					'</div>'.
 				'</form>'.
@@ -239,7 +254,7 @@ require_once('initialize.php');
 
     </main>
 
-<footer class="footer">
+	<footer id="footer">
 		 <div class="container-fluid w3-container w3-teal">
 		  <div  class="container">
 		   <h3 class="text-center cont">צור קשר</h3>
