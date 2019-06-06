@@ -1,12 +1,12 @@
 <?php
-  require_once('initialize.php');
-  require_once('sal.php');
+require_once('initialize.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <title>Products-Ytex</title>
+ <title>Categories-Ytex</title>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,8 +14,8 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" type="text/css" href="css/t6.css">
-
 </head>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 	<header class="header">
         	    <?php 
@@ -208,41 +208,44 @@
 		 <p class="text-center first">Ytex</p>
 		</div>
 	 </header>
+
 	<main>
-		<div class="container">
-			<br/>
+	    
+    <div class="container">
+        <center><h1 class="slogen2"> <strong> קטגוריות מוצרים  </strong> </h1></center> <br><br>
+	   <div class="row form-group">
 		
-			    <div class="container">
-                	<center><h1 class="slogen2"> <strong> כל המוצרים  </strong> </h1></center> <br><br>
-                	<div class="row form-group">
-                	<?php
-                        $products_arr = Product::find_all_Products();
-                        			for($j=0; $j<sizeof($products_arr);$j++) {	
-                        			echo '<div class="col-md-4">'.
-                        		        '<form method="post" action="categories1.php?action=add&id=  '.$products_arr[$j]->get_product_name().'">'.
-                        					'<div style="border:1px solid #800000; background-color:#f5f5dc; border-radius:5px; padding:16px; margin:16px; height:670px;" align="center">'.
-                        						'<img src="'.$products_arr[$j]-> get_image().'" class="img-circle img-responsive" width="300" height="230"/>';
-                        
-                        					echo	'<h2 style="font-family: verdana; color:black; font-size:25px;">'.$products_arr[$j]->get_product_name().'</h2>';
-                        
-                                        	echo    '<span style="font-family: verdana; font-size:15px;">'.$products_arr[$j]->get_description();'</span>';
-                        	
-                        					echo	'<h4 class="text-danger">מחיר: ₪'.$products_arr[$j]->get_price().'</h4>';
-                        
-                        					echo	'<input type="number" min="0" name="quantity" value="1" class="form-control" />';
-                        
-                        					echo	'<input type="hidden" name="hidden_name" value="'.$products_arr[$j]->get_product_name().'" />';
-                        
-                        					echo	'<input type="hidden" name="hidden_price" value="'.$products_arr[$j]->get_price().'" />'.'<br>';
-                        
-                        					echo	'<input type="submit" name="add_to_cart" style="margin-top:5px;" class="myButton" value="הוסף לסל" />'.
-                        
-                        					'</div>'.
-                        				'</form>'.
-                        			'</div>';
-                        			}
-                        			?>
-                        			
+        <?php
+        	   $category=array();
+               $category=Product::find_all_category();
+                for($j=0; $j<sizeof($category);$j++) {
+                    
+                    	echo '<div class="col-md-3">'.
+            		        '<form method="post" action="categories.php?page='.$category[$j]->get_category().'">'.
+            					'<div style="border:1px solid #800000; background-color:#f5f5dc; border-radius:5px; padding:16px; margin:16px;" align="center">';
+            					if ($category[$j]->get_category()=="שטיחים"){
+            						echo '<img src="img/shateeh.jpg" ; class="img-responsive img-circle" />'.'<br />';
+            					}
+            				    else if ($category[$j]->get_category()=="מגבות "){
+            						echo '<img src="img/mgebt1.jpg" ; class="img-responsive img-circle" />'.'<br />';
+            					}
+            					else if ($category[$j]->get_category()=="כריות"){
+            						echo '<img src="img/careet.jpg"; class="img-responsive img-circle"/>'.'<br />';
+            					}
+            					else if ($category[$j]->get_category()=="מצעים "){
+            						echo '<img src="img/mtsaem.jpg" ; class="img-responsive img-circle"/>'.'<br />';
+            					}
+
+            	
+                				echo	'<input type="submit" id='.$category[$j]->get_category().'
+                					style="margin-top:5px;" class="myButton" value='.$category[$j]->get_category().'>';
+                     
+                				echo	'</div>'.
+                				'</form>'.
+                			 '</div>';
+                }
+        ?>
+
 
                         			</div>
                 </div>
