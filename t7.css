@@ -4,11 +4,23 @@
   }
   
   .header3{
-  border-radius: 25px;
-  background: #f5f5dc;
-  padding: 20px; 
-  width: 350px;
-  height: 840px; 
+	  border-radius: 25px;
+	  background: #f5f5dc;
+	  padding: 20px; 
+	  height: 740px; 
+	  font-size:20px;
+	  width:450px;
+      margin: 0 auto;
+}
+
+#color{
+   	  color:#b2a0f6;
+}
+
+@media (max-width: 400px) {
+    .header3{
+        width:300px;
+    }
 }
 
 .header2{
@@ -18,7 +30,6 @@
 .bg {
   /* The image used */
   background-image: url("ytext.jpg");
-
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -28,13 +39,6 @@
     padding: 20px 20px;
   }
   
-  #contact {
-	color:#b2a0f6;
-	font-size:20px;
-	width:40%;
-	margin: 0 auto;
-}
-
 
   #b2{
   margin: 0px auto;
