@@ -15,10 +15,12 @@ session_start();
     				'item_quantity'		=>	$_POST["quantity"]
     			);
     			$_SESSION["shopping_cart"][$count] = $item_array;
+    			    		echo '<script>alert("הוספת פריט לסל!")</script>';
+
     		}
     		else
     		{
-    			echo '<script>alert("הפריט נוסף לסל!")</script>';
+    			echo '<script>alert("הפריט נמצא בסל!")</script>';
     		}
     	}
     	else
@@ -43,9 +45,21 @@ session_start();
     			{
     				unset($_SESSION["shopping_cart"][$keys]);
     				echo '<script>alert("הפריט הוסר מהסל!")</script>';
-    				echo '<script>window.location="home.php"</script>';
+    				echo '<script>window.location.document.URL</script>';
     			}
     		}
+    	}
+    	
+    	else if($_GET["action"] == "delete2")
+    	{
+
+    				foreach($_SESSION["shopping_cart"] as $keys => $values)
+    		         {
+    			    	unset($_SESSION["shopping_cart"][$keys]);
+                     }
+    				echo '<script>alert("הפריטים הוסרו מהסל!")</script>';
+    				echo '<script>window.location.document.URL</script>';
+    		
     	}
     }
 
