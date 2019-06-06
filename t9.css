@@ -3,12 +3,21 @@
   font-family:Lato, sans-serif;
   }
   
-  .header3{
-  border-radius: 25px;
-  background: #f5f5dc;
-  padding: 20px; 
-  width:450px;
-  height:950px; 
+.header3{
+	  border-radius: 25px;
+	  background: #f5f5dc;
+	  padding: 20px; 
+	  height: 950px; 
+	  color:#b2a0f6;
+	  font-size:20px;
+	  width:450px;
+      margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+    .header3{
+        width:300px;
+    }
 }
 
 .header2{
@@ -35,13 +44,6 @@
     padding: 20px 20px;
   }
   
-  #contact {
-	color:#b2a0f6;
-	font-size:20px;
-	width:40%;
-	margin: 0 auto;
-}
-
 
 .go{
 	position:relative;
