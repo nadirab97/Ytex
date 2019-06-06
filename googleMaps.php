@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <title>Home-Ytex</title>
+ <title>Location-Ytex</title>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-<header class="header">
+	<header class="header">
         	    <?php 
           session_start(); 
           if (isset($_GET['logout'])) {
@@ -58,7 +58,7 @@
                 						<td><?php echo $values["item_name"]; ?></td>
                 						<td><?php echo $values["item_quantity"]; ?></td>
                 						<td>₪ <?php echo $values["item_price"]; ?></td>
-                						<td>₪ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
+                						<td>₪ <?php echo ($values["item_quantity"] * $values["item_price"]);?></td>
                 						<td><a href="categories1.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">הסר מהסל</span></a></td>
                 					</tr>
                 					<?php
@@ -66,9 +66,23 @@
                 						}
                 					?>
                 					<tr>
-                						<td colspan="3" align="right">סה"כ</td>
-                						<td align="right">₪ <?php echo number_format($total, 2); ?></td>
+                						<td colspan="3" align="right">הנחה חבר מעדון</td>
+                						<td align="right">% 
+                						<?php if (isset($_SESSION['username'])) : ?>
+                                        <?php echo number_format("10"); ?> <?php else : ?>
+                                        <?php echo number_format("0"); ?> <?php endif ?>
+                                        </td>
                 						<td></td>
+                					</tr>
+                					<tr>
+                						<td colspan="3" align="right">סה"כ</td>
+                						<td align="right">₪ <?php if (isset($_SESSION['username'])) : ?>
+                                        <?php $total=($total-0.1*$total);?> <?php else : ?>
+                                        <?php $total=($total)?> <?php endif ?>
+                						
+                						<?php echo ($total); ?></td>
+                						<td><a href="categories1.php?action=delete2&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">הסר הכל</span></a></td>
+
                 					</tr>
                 					<?php
                 					}
@@ -90,9 +104,10 @@
 		<div class="container-fluid w3-container w3-teal">
 		 <nav class="col-sm-12 navbar-light catgory navbar navbar-fixed-top" id="salim1">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -118,11 +133,12 @@
                    <button style="family-font:verdana;"id="mycart" data-toggle="modal" data-target="#cartModal" class="shop">הסל שלי</button>
 		 </nav>
 
-		 <nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
+		<nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -195,14 +211,8 @@
 
   <div class="container1">
     <div class="row">
-      <div class="col">
-        <h1 class="">My Map</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-	
-        <div id="map"></div>
+        <center><h1 class="slogen2">?איפה אנחנו</h1></center>
+            <div id="map"></div>
       </div>
     </div>
   </div>
@@ -218,7 +228,7 @@
 </main>
 
 
-<footer class="footer">
+	<footer id="footer">
 		 <div class="container-fluid w3-container w3-teal">
 		  <div  class="container">
 		   <h3 class="text-center cont">צור קשר</h3>
