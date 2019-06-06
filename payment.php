@@ -1,7 +1,6 @@
-
 <?php
 session_start();
-
+header('Content-type: text/html; charset=UTF-8');
 // initializing variables
 $ordernumber="";
 $name = "";
@@ -48,11 +47,10 @@ mysqli_query($db, $sql);
  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
  <link rel="stylesheet" type="text/css" href="css/t6.css">
  <link rel="stylesheet" type="text/css" href="t9.css">
-
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-  <header class="header">
+	<header class="header">
         	    <?php 
           session_start(); 
           if (isset($_GET['logout'])) {
@@ -94,7 +92,7 @@ mysqli_query($db, $sql);
                 						<td><?php echo $values["item_name"]; ?></td>
                 						<td><?php echo $values["item_quantity"]; ?></td>
                 						<td>₪ <?php echo $values["item_price"]; ?></td>
-                						<td>₪ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
+                						<td>₪ <?php echo ($values["item_quantity"] * $values["item_price"]);?></td>
                 						<td><a href="categories1.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">הסר מהסל</span></a></td>
                 					</tr>
                 					<?php
@@ -102,9 +100,23 @@ mysqli_query($db, $sql);
                 						}
                 					?>
                 					<tr>
-                						<td colspan="3" align="right">סה"כ</td>
-                						<td align="right">₪ <?php echo number_format($total, 2); ?></td>
+                						<td colspan="3" align="right">הנחה חבר מעדון</td>
+                						<td align="right">% 
+                						<?php if (isset($_SESSION['username'])) : ?>
+                                        <?php echo number_format("10"); ?> <?php else : ?>
+                                        <?php echo number_format("0"); ?> <?php endif ?>
+                                        </td>
                 						<td></td>
+                					</tr>
+                					<tr>
+                						<td colspan="3" align="right">סה"כ</td>
+                						<td align="right">₪ <?php if (isset($_SESSION['username'])) : ?>
+                                        <?php $total=($total-0.1*$total);?> <?php else : ?>
+                                        <?php $total=($total)?> <?php endif ?>
+                						
+                						<?php echo ($total); ?></td>
+                						<td><a href="categories1.php?action=delete2&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">הסר הכל</span></a></td>
+
                 					</tr>
                 					<?php
                 					}
@@ -126,9 +138,10 @@ mysqli_query($db, $sql);
 		<div class="container-fluid w3-container w3-teal">
 		 <nav class="col-sm-12 navbar-light catgory navbar navbar-fixed-top" id="salim1">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -154,11 +167,12 @@ mysqli_query($db, $sql);
                    <button style="family-font:verdana;"id="mycart" data-toggle="modal" data-target="#cartModal" class="shop">הסל שלי</button>
 		 </nav>
 
-		 <nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
+		<nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -211,10 +225,6 @@ mysqli_query($db, $sql);
                 	<p> <strong><?php echo $_SESSION['username']; ?></strong>&nbsp;<i class="glyphicon glyphicon-user"></i></p>
                 	<p> <a href="home.php?logout='1'" style="color: red;">התנתק</a> </p>
                 <?php endif ?>
-                
-                <?php if (isset($_SESSION['username'])) : ?>
-                <?php $total=($total-0.1*$total);?> <?php else : ?>
-                <?php $total=($total)?> <?php endif ?>
               </div>
               
 			   
@@ -231,12 +241,12 @@ mysqli_query($db, $sql);
 		 <p class="text-center first">Ytex</p>
 		</div>
 	 </header>
+	 
 <main class="bg8">
-
             <center class="header2">
-            	<div class="container row header3" id="contact">
+            	<div class="container row header3">
 					<div class="container-fluid w3-container w3-teal">
-                     <form method="post" action="paypal/first.php">
+                        <form method="post" action="paypal/first.php">
                             <div class="input-group">
                               <h1>פרטי המשלוח</h1>
 			
@@ -263,28 +273,27 @@ mysqli_query($db, $sql);
                             </div>
                             
         			        <div class="input-group">
-            			        <label> :פלאפון</label><br>
+            			        <label> :פלפון</label><br>
             				    <input class="form-input form-control" name="phone" size="37.5" type="tel" placeholder="054-1111111" required />    
                             </div>
                             <div class="input-group">
                                 <label> :עיר </label><br>
-                                <input class="form-input form-control" name="city" type="text" size="37.5" placeholder="הזן עיר" required />
+                                <input class="form-input form-control" name="city" type="text" size="37.5" placeholder="תל אביב" required />
         			        </div>
         			        <div class="input-group">
             			        <label>:רחוב </label><br>
-            				    <input class="form-input form-control" name="street" size="37.5" type="text" placeholder="שכונה/כביש"   required />
+            				    <input class="form-input form-control" name="street" size="37.5" type="text" placeholder="היינריך היינה"   required />
                             </div>
                             <div class="input-group"  >
             				    <label >:מיקוד </label><br>
-            				    <p><input class="form-input form-control" name="postcode"  size="37.5"  type="text"  placeholder="הזן מיקוד" required /></p><br>
+            				    <p><input class="form-input form-control" name="postcode"  size="37.5"  type="text"  placeholder="7120850" required /></p><br>
                             </div>
                      <div class="input-group">
                             <label>  :מחיר כולל </label><br>
-                            <p><input class="form-input form-control" size="10" type="text" name="price"  value="<?php echo number_format($total);?>" readonly></p> <br>
+                            <p><input class="form-input form-control" size="10" type="text" name="price"  value="<?php echo $total?>" readonly></p> <br>
                             <p><button class="b1" id="button3" type="submit" name="det"><span>PayPal</span></button></p> 
                         </div>
-                               
-                                                </form>
+                       </form>
 
 					</div>
                  </div>
@@ -293,7 +302,7 @@ mysqli_query($db, $sql);
 
   </main>
 
- <footer class="footer">
+	<footer id="footer">
 		 <div class="container-fluid w3-container w3-teal">
 		  <div  class="container">
 		   <h3 class="text-center cont">צור קשר</h3>
