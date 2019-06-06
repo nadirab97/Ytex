@@ -24,28 +24,11 @@ class Product{
   public function get_category(){
     return $this->category;
   }
-  
  
-
-  public function get_categoty()
-  {
-    global $database;
-    $sql="SELECT DISTINCT 'Category' FROM Products";
-    $result = $database->get_connection()->query($sql);
-    confirm_result_set($result);
-    $size_category = $result->fetch_assoc();
-    return $size_category['Category']; 
-  }
-  
-   /*  $result = $database->get_connection()->query($sql);
-    confirm_result_set($result);
-    $product = $result->fetch_assoc();
-    $result->free_result();
-    $this->instantation($product);*/
     
   public function find_product_by_category($category) {
     global $database;
-    $sql = "SELECT `product name`, `Description`, `Price`, `Image` FROM Products WHERE Category='". $category . "'";
+    $sql = "SELECT `Product name`, `Description`, `Price`, `Image` FROM Products WHERE Category='". $category . "'";
 
     $products_by_category= array();
     $result_set = $database->get_connection()->query($sql);
