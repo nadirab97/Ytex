@@ -63,9 +63,23 @@
                 						}
                 					?>
                 					<tr>
-                						<td colspan="3" align="right">סה"כ</td>
-                						<td align="right">₪ <?php echo number_format($total, 2); ?></td>
+                						<td colspan="3" align="right">הנחה חבר מעדון</td>
+                						<td align="right">% 
+                						<?php if (isset($_SESSION['username'])) : ?>
+                                        <?php echo number_format("10"); ?> <?php else : ?>
+                                        <?php echo number_format("0"); ?> <?php endif ?>
+                                        </td>
                 						<td></td>
+                					</tr>
+                					<tr>
+                						<td colspan="3" align="right">סה"כ</td>
+                						<td align="right">₪ <?php if (isset($_SESSION['username'])) : ?>
+                                        <?php $total=($total-0.1*$total);?> <?php else : ?>
+                                        <?php $total=($total)?> <?php endif ?>
+                						
+                						<?php echo number_format($total, 2); ?></td>
+                						<td><a href="categories1.php?action=delete2&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">הסר הכל</span></a></td>
+
                 					</tr>
                 					<?php
                 					}
@@ -87,9 +101,10 @@
 		<div class="container-fluid w3-container w3-teal">
 		 <nav class="col-sm-12 navbar-light catgory navbar navbar-fixed-top" id="salim1">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -115,11 +130,12 @@
                    <button style="family-font:verdana;"id="mycart" data-toggle="modal" data-target="#cartModal" class="shop">הסל שלי</button>
 		 </nav>
 
-		 <nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
+		<nav class="col-sm-12 navbar-light catgory navbar" id="salim2">
 			  <ul class="nav navbar-nav">
-			   <li class="active"><a href="home.php">בית</a></li>
-			   <li style="font-size:13px;"><a href="home.php#band">המותג</a></li>
-			   <li style="font-size:13px;"><a href="#" title="not active">מבצעים</a></li>
+			   <li style="font-size:15px; font-weight: bold;"><a href="home.php">בית</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf; border-left: solid 2px #ffeebf;"><a href="home.php#band">המותג</a></li>
+			   <li style="font-size:13px; border-right: solid 2px #ffeebf;"><a href="home.php#footer">צור קשר</a></li>
+
 			   <li class="dropdown">
 				 <a class="dropdown-toggle" style="font-size:13px;" data-toggle="dropdown" href="categories1.php">קטגורית מוצרים<span class="caret"></span></a>
 				  <ul class="dropdown-menu" style="font-size:13px;">
@@ -201,26 +217,26 @@
 
 			<div class="carousel-inner" role="listbox">
 			  <div class="item active">
-				<img src="img\t1.jpg" class="pic" alt="New York" width="1200" height="700">
+				<img src="img\k1.jpg" class="pic" width="1200" height="700">
 				<div class="carousel-caption">
-				  <h3>כריות נוי </h3>
-				  <p>כריות נוי במגוון צבעים וגדלים</p>
-				</div>      
+				  <h3>Ytex</h3>
+				  <p>שיווק מוצרי טקסטיל לבית</p>
+				</div>
 			  </div>
 
 			  <div class="item">
-				<img src="img\t2.jpg" class="pic" alt="Chicago" width="1200" height="700">
-				<div class="carousel-caption">
-				  <h3>וילונות</h3>
-				  <p>קיים בשני גדלים קצר 1.60, ארוך 2.50 </p>
+				<img src="img\k2.jpg" class="pic" width="1200" height="700">
+				<div  class="carousel-caption">
+				  <h3>אבזרים</h3>
+				  <p>מגוון אביזרים לעיצוב הבית</p>
 				</div>      
 			  </div>
 			
 			  <div class="item">
-				<img src="img\t3.jpg" class="pic" alt="Los Angeles" width="1200" height="700">
+				<img src="img\k3.jpg" class="pic" width="1200" height="700">
 				<div class="carousel-caption">
-				  <h3>אביזרים</h3>
-				  <p>מגוון אביזרים לעיצוב הבית</p>
+				  <h3>איכות</h3>
+				  <p>מוצאים רק אצלנו</p>
 				</div>      
 			  </div>
 			</div>
@@ -262,7 +278,7 @@
 			</div>
 			
 			<div class="col-sm-4">
-			  <p class="text-center"><strong>חזירת החנות</strong></p><br>
+			  <p class="text-center"><strong>חזית החנות</strong></p><br>
 			  <a href="#demo2" data-toggle="collapse">
 				<img src="img\t4.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
 			  </a>
@@ -283,13 +299,10 @@
 			</div>
 		  </div>
 		</div>
-		
-		
-
     
     </main>
 
-	<footer class="footer">
+	<footer id="footer">
 		 <div class="container-fluid w3-container w3-teal">
 		  <div  class="container">
 		   <h3 class="text-center cont">צור קשר</h3>
