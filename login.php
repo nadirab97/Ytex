@@ -14,12 +14,12 @@
       
     <button class="b1 button2" onclick="window.location.href='home.php'"><span>לדף הבית</span></button><br><br><br><br> 
     <center class="header2">
-	<div class="container row header3" id="contact">
+	<div class="container row header3" id="color">
      <div class="container-fluid w3-container w3-teal ">
   	  <p style="font-size:30px;">התחברות</p>
   	  <center>
   	   <div>
-		<a  href="home.php">  <img class="go" src="img\ytex.jpg"></a>
+		<a  href="home.php">  <img class="go img-responsive" src="img\ytex.jpg"></a>
 	   </div>
 	  </center>
   	  <p>ברוכים הבאים<br>!פשוט תהנה מההנחות</p><br>
