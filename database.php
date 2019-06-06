@@ -1,5 +1,6 @@
 <?php
   require_once('db_credentials.php');
+header('Content-type: text/html; charset=UTF-8');
 
   class Database{
     private $connection;
@@ -10,6 +11,8 @@
     private function open_db_connection() {
        error_reporting(E_ERROR);
       $this->connection = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+      $this->connection->set_charset("utf8");
+
       if ($this->connection->connect_errno){
         $this->connection=null;
         exit("Connect failed: %s\n". $this->connection->connect_error);
